@@ -1,4 +1,8 @@
 ---
+import '../fonts.css';
+import Logo from '../components/Component_Logo.astro';
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -7,9 +11,20 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{ title }</title>
 	</head>
 	<body>
+  <Logo />
 		<h1>Kevin Rombouts.nl</h1>
 	</body>
 </html>
+
+<style lang="scss" is:global>
+ @import "../styles/_colors.scss";
+ @import "../styles/_fonts.scss";
+
+ html {
+  font-family: $font-body;
+  color: $dark;
+ }
+</style>
