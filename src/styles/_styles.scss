@@ -1,0 +1,103 @@
+// Fonts
+@font-face {
+ font-family: 'Rubik Mono One';
+ src: url('/fonts/rubik-mono-one.woff2') format('woff2'),
+     url('/fonts/rubik-mono-one.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+ font-display: swap;
+}
+
+@font-face {
+ font-family: 'Hubot Sans';
+ src:
+   url('/fonts/hubot-sans.woff2') format('woff2 supports variations'),
+   url('/fonts/hubot-sans.woff2') format('woff2-variations'),
+   url('/fonts/hubot-sans.woff') format('woff');
+ font-weight: 200 900;
+ font-stretch: 75% 125%;
+}
+
+//Breakpoints
+$breakpoints: (
+ "xs": 0,
+ "sm": 480px,
+ "md": 720px,
+ "lg": 960px,
+ "xl": 1200px
+);
+
+@mixin xs {
+ @media (min-width: map-get($breakpoints, "xs")) {
+  @content;
+ } 
+}
+
+@mixin sm {
+ @media (min-width: map-get($breakpoints, "sm")) {
+  @content;
+ } 
+}
+
+@mixin md {
+ @media (min-width: map-get($breakpoints, "md")) {
+  @content;
+ } 
+}
+
+@mixin lg {
+ @media (min-width: map-get($breakpoints, "lg")) {
+  @content;
+ } 
+}
+
+@mixin xl {
+ @media (min-width: map-get($breakpoints, "xl")) {
+  @content;
+ } 
+}
+
+//Custom Properties
+:root {
+ // Grid-block
+ --grid-block-s: 4px;
+ --grid-block-m: 8px;
+ --grid-block-l: 16px;
+ --grid-block-xl: 24px;
+ --grid-block-xxl: 32px;
+
+ // Fonts
+ --font-family-body: 'Hubot Sans', sans-serif;
+ --font-family-title: 'Rubik Mono One', sans-serif;
+
+ --font-size-xs: 0.75rem;
+ --font-size-s: 1rem;
+ --font-size-m: 1.333rem;
+ --font-size-l: 1.777rem;
+ --font-size-xl: 2.3569rem;
+ --font-size-xxl: 3.157rem;
+ --font-size-xxxl: 4.209rem;
+ --font-size-xxxxl: 5.61rem;
+
+ --font-weight-light: 300;
+ --font-weight-regular: 400;
+ --font-weight-bold: 700;
+ --font-weight-extrabold: 800;
+ --font-weight-black: 900;
+
+ --font-width-narrow: 75%;
+ --font-width-normal: 100%;
+ --font-width-wide: 125%;
+
+ // Colors
+ --color-primary: #FF595E;
+ --color-secondary: #FF9B9E;
+ --color-dark: #1A1A1A;
+ --color-light: #FFFFFE;
+}
+
+html {
+ font-family: var(--font-family-body);
+ font-size: var(--font-size-m);
+ color: var(--color-dark);
+}

@@ -1,30 +1,8 @@
 ---
-import '../fonts.css';
+import Framework from '../layouts/Framework.astro';
 import Logo from '../components/Component_Logo.astro';
-
-const { title } = Astro.props;
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{ title }</title>
-	</head>
-	<body>
-  <Logo />
-		<h1>Kevin Rombouts.nl</h1>
-	</body>
-</html>
-
-<style lang="scss" is:global>
- @import "../styles/_colors.scss";
- @import "../styles/_fonts.scss";
-
- html {
-  font-family: $font-body;
-  color: $dark;
- }
-</style>
+<Framework title="Kevin Rombouts.nl">
+ <Logo></Logo>
+ <h1>Hoi, ik ben Kevin</h1>
+</Framework>
