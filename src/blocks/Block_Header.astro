@@ -1,0 +1,26 @@
+---
+import Logo from '../components/Component_Logo.astro';
+import Button from '../components/Component_Button.astro';
+---
+<header>
+ <div class="container">
+  <Logo></Logo>
+  <Button id="header__button" text="contact" icon="fa-message" link="#contact"></Button>
+ </div>
+</header>
+
+<style lang="scss">
+ header {
+  background-color: var(--color-dark);
+  display: block;
+
+  .container {
+   padding-block: 40px;
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+  }
+ }
+</style>

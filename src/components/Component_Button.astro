@@ -1,0 +1,32 @@
+---
+const { id, text = "Button", icon, link = "#", extraClass } = Astro.props;
+---
+<a id={ id } href={ link } class:list={['button', extraClass ]}>{ text }<i class:list={['fa-regular',  icon ]}></i></a>
+
+ <style lang="scss">
+  .button {
+   padding: var(--grid-block-m) var(--grid-block-l);
+   border-radius: 40px;
+   background-color: var(--color-primary);
+
+   font-family: var(--font-family-title);
+   font-size: var(--font-size-xs);
+   line-height: 1;
+
+   color: var(--color-light);
+   text-decoration: none;
+
+   display: inline-flex;
+   flex-direction: row;
+   align-items: baseline;
+   gap: var(--grid-block-m);
+
+   i {
+    font-size: var(--font-size-xs);
+   }
+
+   &:hover {
+    
+   }
+  }
+ </style>

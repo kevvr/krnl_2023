@@ -1,3 +1,5 @@
+@import '_normalize.scss';
+
 // Fonts
 @font-face {
  font-family: 'Rubik Mono One';
@@ -98,6 +100,38 @@ $breakpoints: (
 
 html {
  font-family: var(--font-family-body);
- font-size: var(--font-size-m);
+ font-size: 16px;
  color: var(--color-dark);
+}
+
+.container {
+ width: 100%;
+ margin: 0px auto;
+ padding-inline: 24px;
+
+ @include sm {
+  width: 1080px;
+
+  padding-inline: 40px;
+ }
+}
+
+.show {
+ &--desktop {
+  display: none;
+ }
+
+ &--mobile {
+  display: inherit;
+ }
+
+ @include sm {
+  &--desktop {
+   display: inherit;
+  }
+ 
+  &--mobile {
+   display: none;
+  }
+ }
 }
