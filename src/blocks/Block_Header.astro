@@ -1,17 +1,42 @@
 ---
-import Logo from '../components/Component_Logo.astro';
-import Button from '../components/Component_Button.astro';
+import ComponentLogo from '../components/Component_Logo.astro';
+import ComponentButton from '../components/Component_Button.astro';
 ---
 <header>
+ <div class="header__background">
+  <svg width="500%" height="100%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto" shape-rendering="auto">
+   <defs>
+    <path id="wavepath" d="M 0 2000 0 500 Q 126.5 229 253 500 t 253 0 253 0 253 0 253 0 253 0  v1000 z" />
+    <path id="motionpath" d="M -500 0 0 0" /> 
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+     <stop offset="0%" style="stop-color: var(--color-primary); stop-opacity: 0.3" />
+     <stop offset="100%" style="stop-color: var(--color-dark); stop-opacity: 0" />
+    </linearGradient>
+   </defs>
+   <g >
+    <use xlink:href="#wavepath" y="100" fill="url(#gradient)">
+     <animateMotion dur="30s" repeatCount="indefinite">
+      <mpath xlink:href="#motionpath" />
+     </animateMotion>
+    </use>
+   </g>
+  </svg>
+ </div>
  <div class="container">
-  <Logo></Logo>
-  <Button id="header__button" text="contact" icon="fa-message" extraClass="show--desktop" link="#contact"></Button>
+  <ComponentLogo></ComponentLogo>
+  <ComponentButton id="header__button" text="contact" icon="fa-message" extraClass="show--desktop" link="#contact"></ComponentButton>
  </div>
  <div class="container opening">
-  <h1 class="opening__text">Hoi, ik ben <span class="opening__text--highlight">Kevin</span></h1>
+  <h1 class="opening__text"><span class="opening__text--break">Hoi,</span> ik ben <span class="opening__text--highlight">Kevin</span></h1>
   <div class="opening__image">
-   <img src="/img/image_kevin.jpg">
+   <img src="/img/image_kevin.jpg" alt="Dat is Kevin.">
   </div>
+ </div>
+ <div class="container">
+  <svg width="20" height="63" viewBox="0 0 20 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M9.28125 61.75L0.28125 52.75C-0.09375 52.375 -0.09375 51.6875 0.28125 51.3125C0.65625 50.9375 1.34375 50.9375 1.71875 51.3125L9.03125 58.625V1C9.03125 0.5 9.46875 0 10.0312 0C10.5312 0 11.0312 0.5 11.0312 1V58.625L18.2812 51.3125C18.6562 50.9375 19.3438 50.9375 19.7188 51.3125C20.0938 51.6875 20.0938 52.375 19.7188 52.75L10.7188 61.75C10.3438 62.125 9.65625 62.125 9.28125 61.75Z" fill="var(--color-dark)"/>
+   </svg>
+   
  </div>
 </header>
 
@@ -19,27 +44,51 @@ import Button from '../components/Component_Button.astro';
  @use '../styles/mixins' as *;
 
  header {
-  background-color: var(--color-dark);
+  position: relative;
   display: block;
 
-  .container {
-   padding-block: 40px;
+  .header__background {
+   position: absolute;
+   z-index: 0;
+   top: -175px;
 
+   width: 100%;
+   height: 100%;
+
+   background-color: var(--color-dark);
+   overflow: hidden;
+   svg {
+    #wavepath {
+     // fill: white;
+    }
+   }
+  }
+
+  .container {
+   position: relative;
+   z-index: 10;
+  
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+   gap: var(--grid-gap);
+   
+   padding-block: 40px;
   }
 
   .opening {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
 
    position: relative;
 
-   padding-top: 80px;
+   padding: 10px 0 120px 0;
 
    &__text {
+    position: relative;
+    z-index: 10;
+
     margin: 0;
 
     font-family: var(--font-family-title);
@@ -49,14 +98,47 @@ import Button from '../components/Component_Button.astro';
     &--highlight {
      color: var(--color-primary);
     }
+
+    &--break {
+     display: block;
+    }
    }
 
    &__image {
-    width: 50%;
+    position: absolute;
+    z-index: 0;
+    top: 150px;
+
     flex-shrink: 0;
+    align-self: flex-end;
+    
+    width: var(--grid-mobile-3);
+
+    border-right: 4px solid var(--color-primary);
+    border-bottom: 4px solid var(--color-primary);
 
     img {
+     display: block;
      width: 100%;
+    }
+   }
+  }
+ }
+
+ @include sm {
+  header {
+   .container {}
+   .opening {
+    flex-direction: row;
+
+    padding: 80px 0 0 0;
+
+    &__image {
+     position: relative;
+     z-index: 10;
+     top: 0;
+
+     width: var(--grid-desktop-5);
     }
    }
   }
@@ -69,9 +151,12 @@ import Button from '../components/Component_Button.astro';
     &__text {
      font-size: var(--font-size-xxxl);
     }
+    &__image {
+    }
    }
   }
  }
+
  @include lg {
   header {
    .container {}

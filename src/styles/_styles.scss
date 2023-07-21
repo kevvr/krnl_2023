@@ -60,34 +60,34 @@
  --color-light: #FFFFFE;
 
  //Grid
- $grid-gap: 20px;
+ --grid-gap: 20px;
 
- --grid-desktop-1: calc((((100% - (11 * $grid-gap)) / 12) * 1) + ($grid-gap * 0)); 
- --grid-desktop-2: calc((((100% - (11 * $grid-gap)) / 12) * 2) + ($grid-gap * 1)); 
- --grid-desktop-3: calc((((100% - (11 * $grid-gap)) / 12) * 3) + ($grid-gap * 2)); 
- --grid-desktop-4: calc((((100% - (11 * $grid-gap)) / 12) * 4) + ($grid-gap * 3)); 
- --grid-desktop-5: calc((((100% - (11 * $grid-gap)) / 12) * 5) + ($grid-gap * 4)); 
- --grid-desktop-6: calc((((100% - (11 * $grid-gap)) / 12) * 6) + ($grid-gap * 5)); 
- --grid-desktop-7: calc((((100% - (11 * $grid-gap)) / 12) * 7) + ($grid-gap * 6)); 
- --grid-desktop-8: calc((((100% - (11 * $grid-gap)) / 12) * 8) + ($grid-gap * 7)); 
- --grid-desktop-9: calc((((100% - (11 * $grid-gap)) / 12) * 9) + ($grid-gap * 8)); 
- --grid-desktop-10: calc((((100% - (11 * $grid-gap)) / 12) * 10) + ($grid-gap * 9)); 
- --grid-desktop-11: calc((((100% - (11 * $grid-gap)) / 12) * 11) + ($grid-gap * 10)); 
- --grid-desktop-12: calc((((100% - (11 * $grid-gap)) / 12) * 12) + ($grid-gap * 11)); 
+ --grid-desktop-1: calc((((100% - (11 * var(--grid-gap))) / 12) * 1) + (var(--grid-gap) * 0)); 
+ --grid-desktop-2: calc((((100% - (11 * var(--grid-gap))) / 12) * 2) + (var(--grid-gap) * 1)); 
+ --grid-desktop-3: calc((((100% - (11 * var(--grid-gap))) / 12) * 3) + (var(--grid-gap) * 2)); 
+ --grid-desktop-4: calc((((100% - (11 * var(--grid-gap))) / 12) * 4) + (var(--grid-gap) * 3)); 
+ --grid-desktop-5: calc((((100% - (11 * var(--grid-gap))) / 12) * 5) + (var(--grid-gap) * 4)); 
+ --grid-desktop-6: calc((((100% - (11 * var(--grid-gap))) / 12) * 6) + (var(--grid-gap) * 5)); 
+ --grid-desktop-7: calc((((100% - (11 * var(--grid-gap))) / 12) * 7) + (var(--grid-gap) * 6)); 
+ --grid-desktop-8: calc((((100% - (11 * var(--grid-gap))) / 12) * 8) + (var(--grid-gap) * 7)); 
+ --grid-desktop-9: calc((((100% - (11 * var(--grid-gap))) / 12) * 9) + (var(--grid-gap) * 8)); 
+ --grid-desktop-10: calc((((100% - (11 * var(--grid-gap))) / 12) * 10) + (var(--grid-gap) * 9)); 
+ --grid-desktop-11: calc((((100% - (11 * var(--grid-gap))) / 12) * 11) + (var(--grid-gap) * 10)); 
+ --grid-desktop-12: calc((((100% - (11 * var(--grid-gap))) / 12) * 12) + (var(--grid-gap) * 11)); 
 
- --grid-tablet-1: calc((((100% - (7 * $grid-gap)) / 8) * 1) + ($grid-gap * 0)); 
- --grid-tablet-2: calc((((100% - (7 * $grid-gap)) / 8) * 2) + ($grid-gap * 1)); 
- --grid-tablet-3: calc((((100% - (7 * $grid-gap)) / 8) * 3) + ($grid-gap * 2)); 
- --grid-tablet-4: calc((((100% - (7 * $grid-gap)) / 8) * 4) + ($grid-gap * 3)); 
- --grid-tablet-5: calc((((100% - (7 * $grid-gap)) / 8) * 5) + ($grid-gap * 4)); 
- --grid-tablet-6: calc((((100% - (7 * $grid-gap)) / 8) * 6) + ($grid-gap * 5)); 
- --grid-tablet-7: calc((((100% - (7 * $grid-gap)) / 8) * 7) + ($grid-gap * 6)); 
- --grid-tablet-8: calc((((100% - (7 * $grid-gap)) / 8) * 8) + ($grid-gap * 7)); 
+ --grid-tablet-1: calc((((100% - (7 * var(--grid-gap))) / 8) * 1) + (var(--grid-gap) * 0)); 
+ --grid-tablet-2: calc((((100% - (7 * var(--grid-gap))) / 8) * 2) + (var(--grid-gap) * 1)); 
+ --grid-tablet-3: calc((((100% - (7 * var(--grid-gap))) / 8) * 3) + (var(--grid-gap) * 2)); 
+ --grid-tablet-4: calc((((100% - (7 * var(--grid-gap))) / 8) * 4) + (var(--grid-gap) * 3)); 
+ --grid-tablet-5: calc((((100% - (7 * var(--grid-gap))) / 8) * 5) + (var(--grid-gap) * 4)); 
+ --grid-tablet-6: calc((((100% - (7 * var(--grid-gap))) / 8) * 6) + (var(--grid-gap) * 5)); 
+ --grid-tablet-7: calc((((100% - (7 * var(--grid-gap))) / 8) * 7) + (var(--grid-gap) * 6)); 
+ --grid-tablet-8: calc((((100% - (7 * var(--grid-gap))) / 8) * 8) + (var(--grid-gap) * 7)); 
 
- --grid-mobile-1: calc((((100% - (3 * $grid-gap)) / 4) * 1) + ($grid-gap * 0)); 
- --grid-mobile-2: calc((((100% - (3 * $grid-gap)) / 4) * 2) + ($grid-gap * 1)); 
- --grid-mobile-3: calc((((100% - (3 * $grid-gap)) / 4) * 3) + ($grid-gap * 2)); 
- --grid-mobile-4: calc((((100% - (3 * $grid-gap)) / 4) * 4) + ($grid-gap * 3)); 
+ --grid-mobile-1: calc((((100% - (3 * var(--grid-gap))) / 4) * 1) + (var(--grid-gap) * 0)); 
+ --grid-mobile-2: calc((((100% - (3 * var(--grid-gap))) / 4) * 2) + (var(--grid-gap) * 1)); 
+ --grid-mobile-3: calc((((100% - (3 * var(--grid-gap))) / 4) * 3) + (var(--grid-gap) * 2)); 
+ --grid-mobile-4: calc((((100% - (3 * var(--grid-gap))) / 4) * 4) + (var(--grid-gap) * 3)); 
 }
 
 html {

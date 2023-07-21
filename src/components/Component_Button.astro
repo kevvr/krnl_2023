@@ -9,9 +9,10 @@ const { id, text = "Button", icon, link = "#", extraClass } = Astro.props;
 
  <style lang="scss">
   .button {
-   padding: var(--grid-block-m) var(--grid-block-l);
+   padding: calc(var(--grid-block-m) + 2px) var(--grid-block-l) var(--grid-block-m) var(--grid-block-l);
    border-radius: 40px;
    background-color: var(--color-primary);
+   border: 2px solid var(--color-primary);
 
    font-family: var(--font-family-title);
    font-size: var(--font-size-xs);
@@ -25,12 +26,15 @@ const { id, text = "Button", icon, link = "#", extraClass } = Astro.props;
    align-items: baseline;
    gap: var(--grid-block-m);
 
+   transition: all 0.15s ease-in-out;
+
    i {
     font-size: var(--font-size-xs);
    }
 
    &:hover {
-    
+    background-color: transparent;
+    border: 2px solid var(--color-light);
    }
   }
  </style>
