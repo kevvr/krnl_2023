@@ -1,0 +1,68 @@
+---
+---
+<div class="grid container">
+ <div class="grid__column grid__column--1"></div>
+ <div class="grid__column grid__column--2"></div>
+ <div class="grid__column grid__column--3"></div>
+ <div class="grid__column grid__column--4"></div>
+ <div class="grid__column grid__column--5"></div>
+ <div class="grid__column grid__column--6"></div>
+ <div class="grid__column grid__column--7"></div>
+ <div class="grid__column grid__column--8"></div>
+ <div class="grid__column grid__column--9"></div>
+ <div class="grid__column grid__column--10"></div>
+ <div class="grid__column grid__column--11"></div>
+ <div class="grid__column grid__column--12"></div>
+</div>
+
+<style lang="scss">
+ .grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  &__column {
+   background-color: red;
+   height: 40px;
+
+   &--1 {
+    width: var(--grid-desktop-1);
+   }
+   &--2 {
+    width: var(--grid-desktop-2);
+   }
+   &--3 {
+    width: var(--grid-desktop-3);
+   }
+   &--4 {
+    width: var(--grid-desktop-4);
+   }
+   &--5 {
+    width: var(--grid-desktop-5);
+   }
+   &--6 {
+    width: var(--grid-desktop-6);
+   }
+   &--7 {
+    width: var(--grid-desktop-7);
+   }
+   &--8 {
+    width: var(--grid-desktop-8);
+   }
+   &--9 {
+    width: var(--grid-desktop-9);
+   }
+   &--10 {
+    width: var(--grid-desktop-10);
+   }
+   &--11 {
+    width: var(--grid-desktop-11);
+   }
+
+   &--12 {
+    width: var(--grid-desktop-12);
+   }
+  }
+ }
+</style>
