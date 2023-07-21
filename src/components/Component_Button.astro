@@ -1,7 +1,11 @@
 ---
 const { id, text = "Button", icon, link = "#", extraClass } = Astro.props;
 ---
-<a id={ id } href={ link } class:list={['button', extraClass ]}>{ text }<i class:list={['fa-regular',  icon ]}></i></a>
+<div class={extraClass}>
+ <a id={ id } href={ link } class="button">
+  { text }<i class:list={['fa-regular',  icon ]}></i>
+ </a>
+</div>
 
  <style lang="scss">
   .button {

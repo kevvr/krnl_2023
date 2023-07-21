@@ -5,11 +5,19 @@ import Button from '../components/Component_Button.astro';
 <header>
  <div class="container">
   <Logo></Logo>
-  <Button id="header__button" text="contact" icon="fa-message" link="#contact"></Button>
+  <Button id="header__button" text="contact" icon="fa-message" extraClass="show--desktop" link="#contact"></Button>
+ </div>
+ <div class="container opening">
+  <h1 class="opening__text">Hoi, ik ben <span class="opening__text--highlight">Kevin</span></h1>
+  <div class="opening__image">
+   <img src="/img/image_kevin.jpg">
+  </div>
  </div>
 </header>
 
 <style lang="scss">
+ @use '../styles/mixins' as *;
+
  header {
   background-color: var(--color-dark);
   display: block;
@@ -21,6 +29,57 @@ import Button from '../components/Component_Button.astro';
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+  }
+
+  .opening {
+   display: flex;
+   flex-direction: row;
+
+   position: relative;
+
+   padding-top: 80px;
+
+   &__text {
+    margin: 0;
+
+    font-family: var(--font-family-title);
+    font-size: var(--font-size-xxl);
+    color: var(--color-light);
+
+    &--highlight {
+     color: var(--color-primary);
+    }
+   }
+
+   &__image {
+    width: 50%;
+    flex-shrink: 0;
+
+    img {
+     width: 100%;
+    }
+   }
+  }
+ }
+
+ @include md {
+  header {
+   .container {}
+   .opening {
+    &__text {
+     font-size: var(--font-size-xxxl);
+    }
+   }
+  }
+ }
+ @include lg {
+  header {
+   .container {}
+   .opening {
+    &__text {
+     font-size: var(--font-size-xxxxl);
+    }
+   }
   }
  }
 </style>

@@ -16,7 +16,7 @@
    </svg>
   </div>
   <div class="logo__text">
-   <div class="logo__text--headline"><span class="logo__text--highlight">Kevin</span>Rombouts</div>
+   <div class="logo__text--headline"><span class="logo__text--highlight logo__text--break">Kevin</span>Rombouts</div>
    <div class="logo__text--subtitle show--desktop">Web developer, uitgever <span class="logo__text--highlight">&</span> podcast co-host</div>
   </div>
  </div>
@@ -25,24 +25,30 @@
 </div>
 
 <style lang="scss">
+ @use '../styles/mixins' as *;
+
   .logo {
    &__container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--grid-block-l);
+    gap: var(--grid-block-m);
    }
 
    &__icon {
     svg {
      width: auto;
-     height: 80px;
+     height: 40px;
     }
    }
 
    &__text {
     &--highlight {
      color: var(--color-primary);
+    }
+
+    &--break {
+     display: block;
     }
 
     &--headline {
@@ -60,6 +66,26 @@
      color: var(--color-light);
     }
    }
+  }
 
+  @include sm {
+   .logo {
+    &__container{
+     gap: var(--grid-block-l);
+    }
+
+    &__icon {
+     svg {
+      height: 80px;
+     }
+    }
+
+    &__text {
+     &--subtitle {
+      margin-left: 2px;
+      margin-top: 2px
+     }
+    }
+   }
   }
 </style>
