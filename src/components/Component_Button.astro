@@ -32,9 +32,18 @@ const { id, text = "Button", icon, link = "#", extraClass } = Astro.props;
     font-size: var(--font-size-xs);
    }
 
-   &:hover {
+   &__hover--light a:hover {
     background-color: transparent;
     border: 2px solid var(--color-light);
+
+    color: var(--color-light);
+   }
+
+   &__hover--dark a:hover {
+    background-color: transparent;
+    border: 2px solid var(--color-dark);
+    
+    color: var(--color-dark);
    }
   }
  </style>
