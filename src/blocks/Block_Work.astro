@@ -1,21 +1,89 @@
 ---
+import ComponentButton from "../components/Component_Button.astro";
 import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
 ---
 <section id="work">
  <div class="container work__container">
   <div class="work__title">
    <h2>
-    Werk
+    Recent werk
    </h2>
    <ComponentWaveyLine></ComponentWaveyLine>
   </div>
   <div class="work__gallery">
-   <div class="gallery"></div>
+   <div class="gallery">
+    <div class="gallery__item gallery__item--1">
+     <div class="gallery__image">
+      <img src="https://picsum.photos/600/600?random=1" alt="Werk">
+     </div>
+     <div class="gallery__content">
+      <div class="gallery__card">
+       <h3 class="gallery__title">
+       Titel
+      </h3>
+      <p class="gallery__description">
+       Een korte samenvatting van wat ik heb gedaan in tien woorden.
+      </p>
+      <ComponentButton text="Lees meer" icon="fa-arrow-right" extraClass="gallery__button"></ComponentButton>
+      </div> 
+     </div>
+    </div>
+    <div class="gallery__item gallery__item--2">
+     <div class="gallery__image">
+      <img src="https://picsum.photos/600/600?random=2" alt="Werk">
+     </div>
+     <div class="gallery__content">
+      <div class="gallery__card">
+       <h3 class="gallery__title">
+       Titel
+      </h3>
+      <p class="gallery__description">
+       Een korte samenvatting van wat ik heb gedaan in tien woorden.
+      </p>
+      <ComponentButton text="Lees meer" icon="fa-arrow-right" extraClass="gallery__button"></ComponentButton>
+      </div> 
+     </div>
+    </div>
+    <div class="gallery__item gallery__item--3">
+     <div class="gallery__image">
+      <img src="https://picsum.photos/600/600?random=3" alt="Werk">
+     </div>
+     <div class="gallery__content">
+      <div class="gallery__card">
+       <h3 class="gallery__title">
+       Titel
+      </h3>
+      <p class="gallery__description">
+       Een korte samenvatting van wat ik heb gedaan in tien woorden.
+      </p>
+      <ComponentButton text="Lees meer" icon="fa-arrow-right" extraClass="gallery__button"></ComponentButton>
+      </div> 
+     </div>
+    </div>
+    <div class="gallery__item gallery__item--4">
+     <div class="gallery__image">
+      <img src="https://picsum.photos/600/600?random=4" alt="Werk">
+     </div>
+     <div class="gallery__content">
+      <div class="gallery__card">
+       <h3 class="gallery__title">
+       Titel
+      </h3>
+      <p class="gallery__description">
+       Een korte samenvatting van wat ik heb gedaan in tien woorden.
+      </p>
+      <ComponentButton text="Lees meer" icon="fa-arrow-right" extraClass="gallery__button"></ComponentButton>
+      </div> 
+     </div>
+    </div>
+   </div>
   </div>
  </div>
 </section>
 
 <style lang="scss">
+@use '../styles/_mixins.scss' as *;
+
  #work {
   .work {
    &__container {
@@ -31,6 +99,168 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
     h2 {
      font-size: var(--font-size-l);
      font-weight: 500;
+    }
+   }
+
+   &__gallery {
+    margin: 0 auto;
+    
+    .gallery {
+     width: 100%;
+     height: 100%;
+
+     display: flex;
+     flex-direction: column;
+     gap: var(--grid-gap);
+
+     &__item {
+      height: 350px;
+
+      position: relative;
+      overflow: hidden;
+     }
+
+     &__image {
+      height: inherit;
+      width: 100%;
+      
+
+      img {
+       display: block;
+
+       min-width: 100%;
+       min-height: 100%;
+       width: 100%;
+       height: auto;
+       -o-object-fit: cover;
+       object-fit: cover;
+      }
+     }
+
+     &__content {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(26,26,26,0.8) 20%, rgba(26,26,26,0) 100%);
+     }
+
+     &__card {
+      width: auto;
+
+      color: var(--color-light);
+      padding: var(--grid-block-xxl);
+     }
+
+     &__description {
+      padding-bottom: var(--grid-block-l);
+     }
+    }
+   }
+  }
+ }
+
+ @include md {
+  #work {
+   .work {
+    &__gallery {
+     .gallery {
+      height: 600px; 
+
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+
+      &__item {
+       height: auto;
+
+       &--1 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 5;
+       }
+       &--2 {
+        grid-column-start: 7;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 3;
+       }
+       &--3 {
+        grid-column-start: 7;
+        grid-column-end: 13;
+        grid-row-start: 3;
+        grid-row-end: 5;
+       }
+       &--4 {
+        grid-column-start: 1;
+        grid-column-end: 13;
+        grid-row-start: 5;
+        grid-row-end: 7;
+       }
+      }
+
+      &__image {
+       img {
+        width: auto;
+        height: auto;
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+
+ @include lg {
+  #work {
+   .work {
+    &__gallery {
+     .gallery {
+      &__item {
+       &--1 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 7;
+       }
+       &--2 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 1;
+        grid-row-end: 4;
+       }
+       &--3 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 4;
+        grid-row-end: 7;
+       }
+       &--4 {
+        grid-column-start: 10;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 7;
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+
+ @include xl {
+  #work {
+   .work {
+    &__gallery {
+     margin: 0 calc(50% - 600px) 0 calc(50% - 600px);
     }
    }
   }
