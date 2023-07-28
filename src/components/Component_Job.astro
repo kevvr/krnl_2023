@@ -1,23 +1,103 @@
 ---
-const { title, description, period, logo } = Astro.props;
+const { title, description, period, logo, logoHeight = "40px" } = Astro.props;
 ---
-<div class="job">
+<div class="job swiper-slide">
  <div class="job__card">
   <div class="card__logo">
-   <img src="{ logo }" alt="{ title }">
+   <img src={ logo } alt={ title }>
   </div>
   <div class="card__text">
    <p class="card__period">
-
+    { period }
    </p>
    <p class="card__title">
-
+    { title }
    </p>
    <p class="card__description">
-
+    { description }
    </p>
   </div>
  </div>
 </div>
 
 <!-- https://codepen.io/sosuke/pen/Pjoqqp -->
+
+<style lang="scss" define:vars={{ logoHeight }}>
+ .job {
+  height: 320px;
+
+  border: 1px solid var(--color-primary);
+
+  transition: background-color 150ms ease-in-out;
+
+  &__card {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   height: 240px;
+
+   padding: 40px;
+  }
+
+  .card {
+   &__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 40px;
+
+    img {
+     height: var(--logoHeight);
+ 
+     filter: invert(0%) sepia(13%) saturate(2158%) hue-rotate(340deg) brightness(94%) contrast(80%);
+    }
+   }
+
+   &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+   }
+
+   &__period {
+    font-size: var(--font-size-xs);
+    font-weight: 300;
+    font-stretch: var(--font-width-narrow);
+    
+    color: var(--color-primary);
+   }
+
+   &__title {
+    font-size: var(--font-size-l);
+    font-weight: 700;
+
+    line-height: 1;
+   }
+
+   &__description {
+    line-height: 1.5;
+   }
+  }
+ }
+
+ .job:hover {
+  cursor: pointer;
+
+  background-color: var(--color-primary);
+  filter: drop-shadow(0px 0px var(--grid-block-s) var(--color-secondary));
+
+  .card {
+   &__logo {
+    filter: invert(99%) sepia(2%) saturate(1228%) hue-rotate(161deg) brightness(119%) contrast(100%);
+   }
+
+   &__period,
+   &__title,
+   &__description {
+    color: var(--color-light);
+   }
+  }
+ }
+</style>
