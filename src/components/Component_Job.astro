@@ -23,6 +23,7 @@ const { title, description, period, logo, logoHeight = "40px" } = Astro.props;
 <!-- https://codepen.io/sosuke/pen/Pjoqqp -->
 
 <style lang="scss" define:vars={{ logoHeight }}>
+ @use '../styles/_mixins.scss' as *;
  .job {
   height: 320px;
 
@@ -97,6 +98,44 @@ const { title, description, period, logo, logoHeight = "40px" } = Astro.props;
    &__title,
    &__description {
     color: var(--color-light);
+   }
+  }
+ }
+
+ .swiper-slide-active {
+  cursor: pointer;
+
+  background-color: var(--color-primary);
+  filter: drop-shadow(0px 0px var(--grid-block-s) var(--color-secondary));
+
+  .card {
+   &__logo {
+    filter: invert(99%) sepia(2%) saturate(1228%) hue-rotate(161deg) brightness(119%) contrast(100%);
+   }
+
+   &__period,
+   &__title,
+   &__description {
+    color: var(--color-light);
+   }
+  }
+ }
+
+ @include md {
+  .swiper-slide-active {
+   background-color: transparent;
+   filter: none;
+   
+   .card {
+    &__logo {
+     filter: invert(0%) sepia(13%) saturate(2158%) hue-rotate(340deg) brightness(94%) contrast(80%);
+    }
+
+    &__period,
+    &__title,
+    &__description {
+     color: var(--color-dark);
+    }
    }
   }
  }

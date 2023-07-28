@@ -103,7 +103,8 @@ html {
 
  @include lg {
   width: 1000px;
-  padding-inline: 0;
+
+  padding-inline: 40px;
  }
 }
 

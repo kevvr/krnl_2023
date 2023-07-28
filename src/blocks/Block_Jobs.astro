@@ -5,22 +5,24 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
 ---
 <section id="jobs">
  <div class="container jobs__container">
-  <div class="jobs__title">
-   <h2>
-    Ook bekend van
-   </h2>
-   <ComponentWaveyLine></ComponentWaveyLine>
-  </div>
-  <div class="jobs__cards">
-   <div class="swiper-wrapper">
-    <ComponentJob title="Mad Pack & Brendly" logo="/img/logo_madpack.svg" description="Web development | Grafisch design | E-mail development" period="2023 - Heden"></ComponentJob>
-    <ComponentJob title="Een Geanimeerd Gesprek" logo="/img/logo_eengeanimeerdgesprek.svg" description="Co-host | Producer | Web developer" period="2022 - Heden"></ComponentJob>
-    <ComponentJob title="Iedereen vond dat leuk." logo="/img/logo_iedereenvonddatleuk.svg" description="Co-host | Producer | Web developer" period="2022 - Heden"></ComponentJob>
-    <ComponentJob title="Pixel Vault" logo="/img/logo_pixelvault.svg" description="Uitgever | PR-manager | Web developer" period="2012 - Heden"></ComponentJob>
-    <ComponentJob title="NRC Media" logo="/img/logo_nrc.svg" description="E-mail development | Project management | Product owner" period="2020 - 2023" logoHeight="25px"></ComponentJob>
-    <ComponentJob title="Coolblue" logo="/img/logo_coolblue.svg" description="E-mail development | Project management" period="2016 - 2020"></ComponentJob>
-    <ComponentJob title="Bax Music" logo="/img/logo_baxshop.svg" description="E-mail marketing | Project management" period="2014 - 2016" logoHeight="35px"></ComponentJob>
-    <ComponentJob title="Ematters" logo="/img/logo_ematters.svg" description="Stage | E-mail development" period="2013 - 2014"></ComponentJob>
+  <div class="jobs__wrapper">
+   <div class="jobs__title">
+    <h2>
+     Ook bekend van
+    </h2>
+    <ComponentWaveyLine></ComponentWaveyLine>
+   </div>
+   <div class="jobs__cards">
+    <div class="swiper-wrapper">
+     <ComponentJob title="Mad Pack & Brendly" logo="/img/logo_madpack.svg" description="Web development | Grafisch design | E-mail development" period="2023 - Heden"></ComponentJob>
+     <ComponentJob title="Een Geanimeerd Gesprek" logo="/img/logo_eengeanimeerdgesprek.svg" description="Co-host | Producer | Web developer" period="2022 - Heden"></ComponentJob>
+     <ComponentJob title="Iedereen vond dat leuk." logo="/img/logo_iedereenvonddatleuk.svg" description="Co-host | Producer | Web developer" period="2022 - Heden"></ComponentJob>
+     <ComponentJob title="Pixel Vault" logo="/img/logo_pixelvault.svg" description="Uitgever | PR-manager | Web developer" period="2012 - Heden"></ComponentJob>
+     <ComponentJob title="NRC Media" logo="/img/logo_nrc.svg" description="E-mail development | Project management | Product owner" period="2020 - 2023" logoHeight="25px"></ComponentJob>
+     <ComponentJob title="Coolblue" logo="/img/logo_coolblue.svg" description="E-mail development | Project management" period="2016 - 2020"></ComponentJob>
+     <ComponentJob title="Bax Music" logo="/img/logo_baxshop.svg" description="E-mail marketing | Project management" period="2014 - 2016" logoHeight="35px"></ComponentJob>
+     <ComponentJob title="Ematters" logo="/img/logo_ematters.svg" description="Stage | E-mail development" period="2013 - 2014"></ComponentJob>
+    </div>
    </div>
   </div>
  </div>
@@ -29,6 +31,8 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
 <script>
  const swiper = new Swiper('.jobs__cards', {
   spaceBetween: 20,
+  slidesPerView: 1.2,
+
   breakpoints: {
    768: {
     slidesPerView: 2,
@@ -41,10 +45,13 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
 </script>
 
 <style lang="scss">
+ @use '../styles/_mixins.scss' as *;
+ 
  #jobs {
   .jobs {
-   &__container {
+   &__wrapper {
     padding-block: 50px;
+    border-bottom: 2px solid var(--color-primary); 
    }
 
    &__title {
@@ -53,11 +60,24 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
     align-items: center;
     gap: var(--grid-block-l);
 
+    padding-bottom: 1em;
     h2 {
      font-size: var(--font-size-l);
      font-weight: 500;
+
+     margin-block: 0;
     }
    }
   }
  }
+
+@include md {
+ #jobs {
+  .jobs {
+   &__wrapper {
+    padding-block: 100px;
+   }
+  }
+ }
+}
 </style>

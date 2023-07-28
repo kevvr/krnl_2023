@@ -5,18 +5,20 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
 ---
 <section id="work">
  <div class="container work__container">
-  <div class="work__title">
-   <h2>
-    Recent werk
-   </h2>
-   <ComponentWaveyLine></ComponentWaveyLine>
-  </div>
-  <div class="work__gallery">
-   <div class="gallery">
-    <ComponentGalleryItem image="https://picsum.photos/600/600?random=1" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
-    <ComponentGalleryItem image="https://picsum.photos/600/600?random=2" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
-    <ComponentGalleryItem image="https://picsum.photos/600/600?random=3" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
-    <ComponentGalleryItem image="https://picsum.photos/600/600?random=4" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
+  <div class="work__wrapper">
+   <div class="work__title">
+    <h2>
+     Recent werk
+    </h2>
+    <ComponentWaveyLine></ComponentWaveyLine>
+   </div>
+   <div class="work__gallery">
+    <div class="gallery">
+     <ComponentGalleryItem image="https://picsum.photos/600/600?random=1" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
+     <ComponentGalleryItem image="https://picsum.photos/600/600?random=2" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
+     <ComponentGalleryItem image="https://picsum.photos/600/600?random=3" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
+     <ComponentGalleryItem image="https://picsum.photos/600/600?random=4" title="Titel" description="Dit is een korte beschrijving van wat recent werk." buttonText="Lees meer"></ComponentGalleryItem>
+    </div>
    </div>
   </div>
  </div>
@@ -49,10 +51,10 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
 @use '../styles/_mixins.scss' as *;
 
  #work {
-  .work {
-   &__container {
+  .work {   
+   &__wrapper {
     padding-block: 50px;
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary); 
    }
 
    &__title {
@@ -61,9 +63,13 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
     align-items: center;
     gap: var(--grid-block-l);
 
+    padding-bottom: 1em;
+    
     h2 {
      font-size: var(--font-size-l);
      font-weight: 500;
+
+     margin-block: 0;
     }
    }
 
@@ -85,7 +91,7 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
  @include md {
   #work {
    .work {
-    &__container {
+    &__wrapper {
      padding-block: 100px;
     }
     &__gallery {

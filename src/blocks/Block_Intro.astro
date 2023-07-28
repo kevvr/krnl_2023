@@ -2,33 +2,35 @@
 ---
 <section id="intro">
  <div class="container intro__container">
-  <div class="intro__about">
-   <p class="intro__text">
-    Een <span class="intro__text--highlight">web</span>- en <span class="intro__text--highlight">e-mail developer</span> met een passie voor games, gadgets en cultuur uit Breda
-   </p> 
-  </div>
-  <div class="intro__cards">
-   <div class="card card--work">
-    <div class="card__content">
-     <p class="card__title">
-      Werk 
-     </p>
-     <p class="card__description">
-      Websites coderen, e-mails bouwen, teksten schrijven en zelfs wat vormgeven. Het zit allemaal in mijn vingers.
-     </p>
-    </div>
-    <a href="#work" class="card__link">Werkzaamheden</a>
+  <div class="intro__wrapper">
+   <div class="intro__about">
+    <p class="intro__text">
+     Een <span class="intro__text--highlight">web</span>- en <span class="intro__text--highlight">e-mail developer</span> met een passie voor games, gadgets en cultuur uit Breda
+    </p>
    </div>
-   <div class="card card--contact">
-    <div class="card__content">
-     <p class="card__title">
-      Contact
-     </p>
-     <p class="card__description">
-      Benieuwd geworden naar mijn werk, hoe ik je kan helpen of gewoon zin om eens te kletsen?
-     </p>
+   <div class="intro__cards">
+    <div class="card card--work">
+     <div class="card__content">
+      <p class="card__title">
+       Werk
+      </p>
+      <p class="card__description">
+       Websites coderen, e-mails bouwen, teksten schrijven en zelfs wat vormgeven. Het zit allemaal in mijn vingers.
+      </p>
+     </div>
+     <a href="#work" class="card__link">Werkzaamheden</a>
     </div>
-    <a href="#work" class="card__link">Neem contact op</a>
+    <div class="card card--contact">
+     <div class="card__content">
+      <p class="card__title">
+       Contact
+      </p>
+      <p class="card__description">
+       Benieuwd geworden naar mijn werk, hoe ik je kan helpen of gewoon zin om eens te kletsen?
+      </p>
+     </div>
+     <a href="#work" class="card__link">Neem contact op</a>
+    </div>
    </div>
   </div>
  </div>
@@ -37,8 +39,8 @@
 <style lang="scss">
  @use '../styles/_mixins.scss' as *;
 
- .intro {
-  &__container {
+ .intro {  
+  &__wrapper {
    display: flex;
    flex-direction: column;
    gap: var(--grid-gap);
@@ -131,7 +133,7 @@
 
  @include md {
   .intro {
-   &__container {
+   &__wrapper {
     flex-direction: row;
 
     padding-block: 100px;
