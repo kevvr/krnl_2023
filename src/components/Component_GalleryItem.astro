@@ -1,0 +1,154 @@
+---
+import ComponentButton from "../components/Component_Button.astro";
+
+const { image, title, description, buttonText = 'Lees meer' } = Astro.props;
+---
+<div class="gallery__item">
+ <div class="gallery__image">
+  <img src={ image } alt={ title } >
+ </div>
+ <div class="gallery__content">
+  <div class="gallery__card">
+   <h3 class="gallery__title">
+   { title }
+  </h3>
+  <p class="gallery__description">
+   { description }
+  </p>
+  <ComponentButton text={ buttonText } icon="fa-arrow-right" extraClass="gallery__button"></ComponentButton>
+  </div> 
+ </div>
+</div>
+
+<style lang="scss">
+ @use '../styles/_mixins.scss' as *;
+ .gallery {
+  &__item {
+   height: 350px;
+
+   position: relative;
+   overflow: hidden;
+  }
+
+  &__image {
+   height: inherit;
+   width: 100%;
+   
+
+   img {
+    display: block;
+
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+   }
+  }
+
+  &__content {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-end;
+
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(0deg, rgba(26,26,26,0.8) 20%, rgba(26,26,26,0) 100%);
+   
+   transform: translateY(100%);
+   transition: all 300ms ease-in-out;
+  }
+
+  &__card {
+   width: auto;
+
+   color: var(--color-light);
+   padding: var(--grid-block-xxl);
+  }
+
+  &__description {
+   padding-bottom: var(--grid-block-l);
+  }
+ }
+
+ @include md {
+  .gallery {
+   &__item {
+    height: auto;
+
+    &:nth-child(1) {
+     grid-column-start: 1;
+     grid-column-end: 7;
+     grid-row-start: 1;
+     grid-row-end: 5;
+    }
+    &:nth-child(2) {
+     grid-column-start: 7;
+     grid-column-end: 13;
+     grid-row-start: 1;
+     grid-row-end: 3;
+    }
+    &:nth-child(3) {
+     grid-column-start: 7;
+     grid-column-end: 13;
+     grid-row-start: 3;
+     grid-row-end: 5;
+    }
+    &:nth-child(4) {
+     grid-column-start: 1;
+     grid-column-end: 13;
+     grid-row-start: 5;
+     grid-row-end: 7;
+    }
+   }
+
+   &__image {
+    img {
+     width: auto;
+     height: auto;
+    }
+   }
+  }
+ }
+
+ @include lg {
+  .gallery {
+   &__item {
+    &:nth-child(1) {
+     grid-column-start: 1;
+     grid-column-end: 7;
+     grid-row-start: 1;
+     grid-row-end: 7;
+    }
+    &:nth-child(2) {
+     grid-column-start: 7;
+     grid-column-end: 10;
+     grid-row-start: 1;
+     grid-row-end: 4;
+    }
+    &:nth-child(3) {
+     grid-column-start: 7;
+     grid-column-end: 10;
+     grid-row-start: 4;
+     grid-row-end: 7;
+    }
+    &:nth-child(4) {
+     grid-column-start: 10;
+     grid-column-end: 13;
+     grid-row-start: 1;
+     grid-row-end: 7;
+    }
+    &:hover .gallery__content {
+     transform: translateY(0%);
+    }
+   }
+  }
+ }
+
+</style>
