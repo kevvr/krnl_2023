@@ -81,7 +81,7 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
  </div>
 </section>
 
-<script>import { callGetStaticPaths } from "astro/dist/core/render/route-cache";
+<script>
 
  // GSAP Mobile
  let galleryItems = gsap.utils.toArray(".gallery__item");
@@ -111,6 +111,7 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
   .work {
    &__container {
     padding-block: 50px;
+    border-bottom: 2px solid var(--color-primary);
    }
 
    &__title {
@@ -196,6 +197,9 @@ import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
  @include md {
   #work {
    .work {
+    &__container {
+     padding-block: 100px;
+    }
     &__gallery {
      .gallery {
       height: 600px; 

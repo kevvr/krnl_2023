@@ -1,0 +1,36 @@
+---
+import ComponentWaveyLine from "../components/Component_WaveyLine.astro";
+
+---
+<section id="jobs">
+ <div class="container jobs__container">
+  <div class="jobs__title">
+   <h2>
+    Ook bekend van
+   </h2>
+   <ComponentWaveyLine></ComponentWaveyLine>
+  </div>
+ </div>
+</section>
+
+<style lang="scss">
+ #jobs {
+  .jobs {
+   &__container {
+    padding-block: 50px;
+   }
+
+   &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--grid-block-l);
+
+    h2 {
+     font-size: var(--font-size-l);
+     font-weight: 500;
+    }
+   }
+  }
+ }
+</style>
